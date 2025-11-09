@@ -56,8 +56,8 @@ def build_graph_from_csv(csv_file, max_rows=None):
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for i, row in enumerate(reader):
-            # if max_rows is not None and i >= max_rows:
-            #     break
+            if max_rows is not None and i >= max_rows:
+                break
             students.append({
                 "id": row['Student ID'],
                 "year": int(row['Year of Study']),
